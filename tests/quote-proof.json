@@ -1,0 +1,50 @@
+[
+  {
+    "id": "fortune-0-01",
+    "original": "Trust thyself",
+    "source": "https://github.com/GITenberg/Essays-by-Ralph-Waldo-Emerson_16643/blob/934f546efdef61d9082af5d8e58c054262f845e7/16643-8.txt",
+    "sha256": "4d5b2b79d070713c3c2ba0c6501636f184a12d9670ec8d5bc695de0402ea85cd"
+  },
+  {
+    "id": "fortune-1-01",
+    "original": "Nothing can bring you peace but yourself.",
+    "source": "https://github.com/GITenberg/Essays-by-Ralph-Waldo-Emerson_16643/blob/934f546efdef61d9082af5d8e58c054262f845e7/16643-8.txt",
+    "sha256": "4d5b2b79d070713c3c2ba0c6501636f184a12d9670ec8d5bc695de0402ea85cd"
+  },
+  {
+    "id": "fortune-4-01",
+    "original": "Nothing great was ever achieved without enthusiasm.",
+    "source": "https://github.com/GITenberg/Essays-by-Ralph-Waldo-Emerson_16643/blob/934f546efdef61d9082af5d8e58c054262f845e7/16643-8.txt",
+    "sha256": "4d5b2b79d070713c3c2ba0c6501636f184a12d9670ec8d5bc695de0402ea85cd"
+  },
+  {
+    "id": "fortune-5-01",
+    "original": "If you shed tears when you miss the sun, you also miss the stars.",
+    "source": "https://github.com/GITenberg/Stray-Birds_6524/blob/385124f3dbeeb79367402d636491db18b5348a8e/6524.txt",
+    "sha256": "44a1a0432dfd36e1d4e5e377517aa5929e92d7304c87270635785dd0b544202d"
+  },
+  {
+    "id": "fortune-2-01",
+    "original": "The stars are not afraid to appear like fireflies.",
+    "source": "https://github.com/GITenberg/Stray-Birds_6524/blob/385124f3dbeeb79367402d636491db18b5348a8e/6524.txt",
+    "sha256": "44a1a0432dfd36e1d4e5e377517aa5929e92d7304c87270635785dd0b544202d"
+  },
+  {
+    "id": "fortune-3-01",
+    "original": "Once we dreamt that we were strangers. We wake up to find that we were dear to each other.",
+    "source": "https://github.com/GITenberg/Stray-Birds_6524/blob/385124f3dbeeb79367402d636491db18b5348a8e/6524.txt",
+    "sha256": "44a1a0432dfd36e1d4e5e377517aa5929e92d7304c87270635785dd0b544202d"
+  },
+  {
+    "id": "fortune-0-02",
+    "original": "Sweet are the uses of adversity",
+    "source": "https://github.com/GITenberg/As-You-Like-It_1523/blob/3063a6f5f3582035a148a7ffb04b7ab0d3b549a8/1523.txt",
+    "sha256": "3da8cf10587fdaa4c7c0ec0162ca3e4f14600191e85bd4ebd39afb48bd0788a4"
+  },
+  {
+    "id": "fortune-2-02",
+    "original": "These little thoughts are the rustle of leaves",
+    "source": "https://github.com/GITenberg/Stray-Birds_6524/blob/385124f3dbeeb79367402d636491db18b5348a8e/6524.txt",
+    "sha256": "44a1a0432dfd36e1d4e5e377517aa5929e92d7304c87270635785dd0b544202d"
+  }
+]

@@ -21,7 +21,7 @@ test('WXSS omits universal and attribute selectors rejected or unsupported by mi
  const sheets=[path.join(root,'app.wxss'),...files(path.join(root,'pages'),'.wxss')];
  for(const file of sheets){
   const source=fs.readFileSync(file,'utf8');
-  for(const match of source.matchAll(/([^{}]+)\{/g)){
+  for(const match of source.matchAll(/(?:^|})([^{}]*)\{/g)){
    assert.ok(!match[1].includes('*'),`${file}: universal selector`);
    assert.ok(!match[1].includes('['),`${file}: attribute selector`);
   }

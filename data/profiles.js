@@ -30,11 +30,17 @@ module.exports = [
       "踏实"
     ],
     "shareQuotes": [
-      "让可靠成为温柔的力量",
-      "可靠也可以带着柔软，不必独自承担所有。"
+      "把事情稳稳做好，比说得漂亮更重要。",
+      "让可靠成为温柔的力量"
     ],
-    "illustrationId": "scene-0",
-    "themeKey": "profile-0"
+    "illustrationId": "quiz-07",
+    "themeKey": "profile-0",
+    "shareDescription": "把事情稳稳做好，比说得漂亮更重要。",
+    "shareTags": [
+      "沉稳",
+      "务实",
+      "可靠"
+    ]
   },
   {
     "type": "ISFJ",
@@ -67,11 +73,17 @@ module.exports = [
       "温柔"
     ],
     "shareQuotes": [
-      "细小的关心也会被看见",
-      "照顾世界时，记得把自己也放在心里。"
+      "关心常常藏在那些被记住的小事里。",
+      "细小的关心也会被看见"
     ],
-    "illustrationId": "scene-1",
-    "themeKey": "profile-1"
+    "illustrationId": "quiz-19",
+    "themeKey": "profile-1",
+    "shareDescription": "关心常常藏在那些被记住的小事里。",
+    "shareTags": [
+      "温柔",
+      "细致",
+      "体贴"
+    ]
   },
   {
     "type": "INFJ",
@@ -104,11 +116,17 @@ module.exports = [
       "安静"
     ],
     "shareQuotes": [
-      "在深处寻找彼此的连接",
-      "把深深的理解，变成一次温和的靠近。"
+      "喜欢往深处想，也在意人与人的连接。",
+      "在深处寻找彼此的连接"
     ],
-    "illustrationId": "scene-2",
-    "themeKey": "profile-2"
+    "illustrationId": "quiz-01",
+    "themeKey": "profile-2",
+    "shareDescription": "喜欢往深处想，也在意人与人的连接。",
+    "shareTags": [
+      "洞察",
+      "理想",
+      "共情"
+    ]
   },
   {
     "type": "INTJ",
@@ -141,11 +159,17 @@ module.exports = [
       "远景"
     ],
     "shareQuotes": [
-      "把未来拆成可走的路",
-      "远方的蓝图，可以从脚下的一步开始。"
+      "习惯先想清楚，再安静地行动。",
+      "把未来拆成可走的路"
     ],
-    "illustrationId": "scene-3",
-    "themeKey": "profile-3"
+    "illustrationId": "quiz-11",
+    "themeKey": "profile-3",
+    "shareDescription": "习惯先想清楚，再安静地行动。",
+    "shareTags": [
+      "冷静",
+      "独立",
+      "远见"
+    ]
   },
   {
     "type": "ISTP",
@@ -178,11 +202,17 @@ module.exports = [
       "灵巧"
     ],
     "shareQuotes": [
-      "在动手之间找到答案",
-      "答案有时藏在一次认真动手的尝试里。"
+      "比起空谈，更喜欢动手找到答案。",
+      "在动手之间找到答案"
     ],
-    "illustrationId": "scene-4",
-    "themeKey": "profile-4"
+    "illustrationId": "quiz-04",
+    "themeKey": "profile-4",
+    "shareDescription": "比起空谈，更喜欢动手找到答案。",
+    "shareTags": [
+      "冷静",
+      "灵巧",
+      "自主"
+    ]
   },
   {
     "type": "ISFP",
@@ -215,11 +245,17 @@ module.exports = [
       "自在"
     ],
     "shareQuotes": [
-      "让生活保留自己的颜色",
-      "你的生活，可以保留属于自己的颜色。"
+      "不急着解释，用喜欢的方式表达。",
+      "让生活保留自己的颜色"
     ],
-    "illustrationId": "scene-5",
-    "themeKey": "profile-5"
+    "illustrationId": "quiz-12",
+    "themeKey": "profile-5",
+    "shareDescription": "不急着解释，用喜欢的方式表达。",
+    "shareTags": [
+      "细腻",
+      "自在",
+      "审美"
+    ]
   },
   {
     "type": "INFP",
@@ -252,11 +288,17 @@ module.exports = [
       "意义"
     ],
     "shareQuotes": [
-      "心里的微光值得被守护",
-      "心里的意义，值得在日常中慢慢落地。"
+      "话不一定多，心里的世界却很丰富。",
+      "心里的微光值得被守护"
     ],
-    "illustrationId": "scene-6",
-    "themeKey": "profile-6"
+    "illustrationId": "quiz-01",
+    "themeKey": "profile-6",
+    "shareDescription": "话不一定多，心里的世界却很丰富。",
+    "shareTags": [
+      "细腻",
+      "理想",
+      "真诚"
+    ]
   },
   {
     "type": "INTP",
@@ -289,11 +331,17 @@ module.exports = [
       "好奇"
     ],
     "shareQuotes": [
-      "给每一个为什么留座位",
-      "好奇不必急着收尾，也可以先留一个问题。"
+      "一个为什么，常常能打开新的世界。",
+      "给每一个为什么留座位"
     ],
-    "illustrationId": "scene-7",
-    "themeKey": "profile-7"
+    "illustrationId": "quiz-15",
+    "themeKey": "profile-7",
+    "shareDescription": "一个为什么，常常能打开新的世界。",
+    "shareTags": [
+      "好奇",
+      "独立",
+      "思辨"
+    ]
   },
   {
     "type": "ESTP",
@@ -326,11 +374,17 @@ module.exports = [
       "敏捷"
     ],
     "shareQuotes": [
-      "机会藏在迈出的那一步",
-      "行动之前的一次停顿，也能带来新的发现。"
+      "先迈出一步，再听现实给出的回应。",
+      "机会藏在迈出的那一步"
     ],
-    "illustrationId": "scene-8",
-    "themeKey": "profile-8"
+    "illustrationId": "quiz-14",
+    "themeKey": "profile-8",
+    "shareDescription": "先迈出一步，再听现实给出的回应。",
+    "shareTags": [
+      "敏捷",
+      "直接",
+      "行动"
+    ]
   },
   {
     "type": "ESFP",
@@ -363,11 +417,17 @@ module.exports = [
       "明亮"
     ],
     "shareQuotes": [
-      "把眼前的日子过出光彩",
-      "把眼前的快乐，分享给愿意同行的人。"
+      "认真感受当下，也愿意分享快乐。",
+      "把眼前的日子过出光彩"
     ],
-    "illustrationId": "scene-9",
-    "themeKey": "profile-9"
+    "illustrationId": "quiz-00",
+    "themeKey": "profile-9",
+    "shareDescription": "认真感受当下，也愿意分享快乐。",
+    "shareTags": [
+      "热情",
+      "自在",
+      "明亮"
+    ]
   },
   {
     "type": "ENFP",
@@ -400,11 +460,17 @@ module.exports = [
       "热忱"
     ],
     "shareQuotes": [
-      "让好奇带你遇见可能",
-      "可能性很多，先为在意的一件事点亮微光。"
+      "总能从平常的日子里，看见新的可能。",
+      "让好奇带你遇见可能"
     ],
-    "illustrationId": "scene-10",
-    "themeKey": "profile-10"
+    "illustrationId": "quiz-02",
+    "themeKey": "profile-10",
+    "shareDescription": "总能从平常的日子里，看见新的可能。",
+    "shareTags": [
+      "热忱",
+      "好奇",
+      "想象"
+    ]
   },
   {
     "type": "ENTP",
@@ -437,11 +503,17 @@ module.exports = [
       "机敏"
     ],
     "shareQuotes": [
-      "换一个角度也许有新路",
-      "新的角度，愿它成为理解彼此的一扇窗。"
+      "换个角度，往往就能找到另一条路。",
+      "换一个角度也许有新路"
     ],
-    "illustrationId": "scene-11",
-    "themeKey": "profile-11"
+    "illustrationId": "quiz-04",
+    "themeKey": "profile-11",
+    "shareDescription": "换个角度，往往就能找到另一条路。",
+    "shareTags": [
+      "机敏",
+      "创新",
+      "思辨"
+    ]
   },
   {
     "type": "ESTJ",
@@ -474,11 +546,17 @@ module.exports = [
       "务实"
     ],
     "shareQuotes": [
-      "让约定一步一步落地",
-      "推进事情时，也为不同的节奏留一点空间。"
+      "方向明确之后，习惯把事情推向完成。",
+      "让约定一步一步落地"
     ],
-    "illustrationId": "scene-12",
-    "themeKey": "profile-12"
+    "illustrationId": "quiz-17",
+    "themeKey": "profile-12",
+    "shareDescription": "方向明确之后，习惯把事情推向完成。",
+    "shareTags": [
+      "务实",
+      "果断",
+      "有序"
+    ]
   },
   {
     "type": "ESFJ",
@@ -511,11 +589,17 @@ module.exports = [
       "亲切"
     ],
     "shareQuotes": [
-      "让每个人都有舒服的位置",
-      "温暖的相处里，你的需要同样值得被听见。"
+      "让大家相处舒服，是一种自然的关心。",
+      "让每个人都有舒服的位置"
     ],
-    "illustrationId": "scene-13",
-    "themeKey": "profile-13"
+    "illustrationId": "quiz-08",
+    "themeKey": "profile-13",
+    "shareDescription": "让大家相处舒服，是一种自然的关心。",
+    "shareTags": [
+      "亲切",
+      "负责",
+      "关怀"
+    ]
   },
   {
     "type": "ENFJ",
@@ -548,11 +632,17 @@ module.exports = [
       "温暖"
     ],
     "shareQuotes": [
-      "陪伴也能成为向前的力量",
-      "陪伴别人成长，也给自己的愿望留一个位置。"
+      "愿意看见别人的潜力，也陪他们向前。",
+      "陪伴也能成为向前的力量"
     ],
-    "illustrationId": "scene-14",
-    "themeKey": "profile-14"
+    "illustrationId": "quiz-05",
+    "themeKey": "profile-14",
+    "shareDescription": "愿意看见别人的潜力，也陪他们向前。",
+    "shareTags": [
+      "温暖",
+      "共情",
+      "联结"
+    ]
   },
   {
     "type": "ENTJ",
@@ -585,10 +675,16 @@ module.exports = [
       "果敢"
     ],
     "shareQuotes": [
-      "把愿景变成可以执行的事",
-      "让清晰的方向，带着真实的倾听一起向前。"
+      "看见方向，就愿意组织力量去实现。",
+      "把愿景变成可以执行的事"
     ],
-    "illustrationId": "scene-15",
-    "themeKey": "profile-15"
+    "illustrationId": "quiz-06",
+    "themeKey": "profile-15",
+    "shareDescription": "看见方向，就愿意组织力量去实现。",
+    "shareTags": [
+      "果敢",
+      "远见",
+      "推进"
+    ]
   }
 ];

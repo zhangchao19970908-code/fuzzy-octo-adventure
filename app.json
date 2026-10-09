@@ -13,7 +13,7 @@
   ],
   "window": {
     "navigationBarTitleText": "遇见更好的自己",
-    "navigationBarBackgroundColor": "#f7fafc",
+    "navigationBarBackgroundColor": "#faf8f2",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#f7fafc"
   },
@@ -41,5 +41,15 @@
         "selectedIconPath": "assets/mine-active.png"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "card-art",
+      "name": "card-art",
+      "pages": [
+        "index"
+      ]
+    }
+  ],
+  "lazyCodeLoading": "requiredComponents"
 }

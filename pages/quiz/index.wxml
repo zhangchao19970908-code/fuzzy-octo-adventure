@@ -1,1 +1,14 @@
-<view class="page" wx:if="{{ready}}"><view class="row"><text>{{index+1}} / {{total}}</text><text bindtap="exit">保存并退出</text></view><view class="bar"><view class="fill" style="width:{{progress}}%"/></view><view class="tiny" wx:if="{{fallback}}">为保持题目均衡，本次包含近期出现过的题目。</view><image wx:if="{{index%2===0}}" class="scene" src="/assets/{{question.illustrationId}}.png" mode="aspectFill"/><view class="card"><image wx:if="{{index%2===1}}" class="scene travel" src="/assets/{{question.illustrationId}}.png" mode="aspectFill"/><view class="question">{{question.text}}</view><view wx:for="{{options}}" wx:key="*this" class="option {{answer===index+1?'selected':''}}" data-value="{{index+1}}" bindtap="pick">{{item}}</view></view><view class="row"><button class="secondary" disabled="{{index===0}}" bindtap="prev">上一题</button><button class="primary" disabled="{{!answer}}" bindtap="next">{{index===total-1?'查看结果':'下一题'}}</button></view></view>
+<view class="quiz-page" wx:if="{{ready}}">
+ <view class="quiz-top"><text class="counter">{{index+1}} <text class="muted">/ {{total}}</text></text><text class="exit" bindtap="exit">保存并退出</text></view>
+ <view class="bar"><view class="fill" style="width:{{progress}}%" /></view>
+ <view wx:if="{{legacy}}" class="notice">正在继续旧版测试；完成后可体验新版情境题。</view>
+ <view wx:if="{{fallback}}" class="notice">为保持题目均衡，本次包含近期出现过的题目。</view>
+ <view class="quiz-sheet {{index%2===0?'scene-above':'scene-header'}}">
+  <image class="quiz-scene" src="{{scene}}" mode="aspectFill" />
+  <view class="quiz-body"><view class="question">{{question.text}}</view><view class="answer-hint">选最接近平时反应的一项，没有标准答案</view>
+   <view wx:for="{{question.options}}" wx:key="id" class="answer {{answer===item.id?'selected':''}}" data-value="{{item.id}}" bindtap="pick"><view class="radio"><view wx:if="{{answer===item.id}}" class="radio-dot" /></view><text>{{item.text}}</text></view>
+   <view wx:if="{{!legacy}}" class="replace-link" bindtap="replace">这个场景不太适用，换一道</view>
+  </view>
+ </view>
+ <view class="quiz-footer"><button class="secondary" disabled="{{index===0}}" bindtap="prev">上一题</button><button class="primary" disabled="{{!answer}}" bindtap="next">{{index===total-1?'查看结果':'下一题'}}</button></view>
+</view>

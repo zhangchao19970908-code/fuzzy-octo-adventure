@@ -1,11 +1,33 @@
 const themes=require('../data/share-themes');
-const palettes=[['#b8e1ff','#fff9ee','#1a3f61'],['#ffd4c9','#fff2e8','#553d56'],['#d8ccf5','#fbf7ff','#423969'],['#d4ebd5','#fffdf0','#345548'],['#ffdfb0','#fff4e2','#765137'],['#c9def3','#fafafa','#293f55']];
-function lines(ctx,text,maxWidth){const out=[];let current='';for(const c of String(text)){if(ctx.measureText(current+c).width>maxWidth&&current){out.push(current);current=c}else current+=c;}if(current)out.push(current);return out;}
-function text(ctx,s,x,y,width,size,color,lineHeight,maxLines=20){ctx.font=`${size}px sans-serif`;ctx.fillStyle=color;const a=lines(ctx,s,width);if(a.length>maxLines)throw Error('卡片文字过长');a.forEach((line,i)=>ctx.fillText(line,x,y+i*lineHeight));return y+a.length*lineHeight;}
+const palettes=[['#f7f2e6','#173f48','#b5a16d'],['#f8f5eb','#34524d','#b5aa80'],['#f4f6f0','#274b58','#acaf88'],['#f5f1e9','#243749','#b6a178'],['#faf2e6','#654d35','#be9d67'],['#f9f5e9','#4a5d4d','#bdad7e']];
+function lines(ctx,s,width){const out=[];let current='';for(const c of String(s)){if(ctx.measureText(current+c).width>width&&current){out.push(current);current=c}else current+=c;}if(current)out.push(current);return out;}
+function text(ctx,s,x,y,width,size,color,height,max=20,family='ExplorerSerif, "Songti SC", serif'){ctx.font=`${size}px ${family}`;ctx.fillStyle=color;ctx.textBaseline='alphabetic';const a=lines(ctx,s,width);if(a.length>max)throw Error('卡片文字过长，请换个模板');a.forEach((line,i)=>ctx.fillText(line,x,y+i*height));return y+a.length*height;}
 function load(canvas,src){return new Promise((resolve,reject)=>{const img=canvas.createImage();img.onload=()=>resolve(img);img.onerror=()=>reject(Error('插画加载失败'));img.src=src;});}
-async function render(page,content,templateId){const theme=themes.find(t=>t.id===templateId);if(!theme)throw Error('模板不存在');const node=await new Promise((resolve,reject)=>wx.createSelectorQuery().in(page).select('#poster').fields({node:true,size:true}).exec(r=>r&&r[0]&&r[0].node?resolve(r[0].node):reject(Error('Canvas 尚未就绪'))));node.width=600;node.height=1000;const ctx=node.getContext('2d'),colors=palettes[theme.palette];ctx.fillStyle=colors[0];ctx.fillRect(0,0,600,1000);const imagePath=theme.kind==='profile'&&theme.variant===0?'/assets/travel-hero.jpg':theme.kind==='fortune'&&theme.variant===0?'/assets/fortune-hero.jpg':`/assets/scene-${theme.scene}.png`;const img=await load(node,imagePath);const variant=theme.variant;if(content.kind==='profile'){
- if(variant===0){ctx.drawImage(img,0,180,600,470);ctx.fillStyle=colors[1];ctx.fillRect(24,630,552,330);text(ctx,'我的人格偏好',35,65,520,30,colors[2],38);text(ctx,content.type,30,155,540,90,colors[2],100);text(ctx,content.title,45,690,510,35,colors[2],44);text(ctx,content.quote,45,750,500,29,colors[2],43,4);text(ctx,content.tags.join(' · '),45,910,500,21,colors[2],30,2);
- }else{ctx.drawImage(img,220,0,380,500);ctx.fillStyle=colors[1];ctx.fillRect(0,470,600,530);text(ctx,content.type,30,115,550,80,colors[2],90);text(ctx,'偏好探索 · 温柔认识自己',30,165,540,24,colors[2],32);text(ctx,content.title,40,540,520,38,colors[2],48);text(ctx,content.quote,40,620,520,35,colors[2],52,4);content.tags.forEach((tag,i)=>text(ctx,tag,40+(i%2)*270,850+Math.floor(i/2)*40,250,23,colors[2],30));}
- }else{const positions=[{imageY:0,imageH:550,panelY:340,panelH:590},{imageY:400,imageH:600,panelY:35,panelH:540},{imageY:0,imageH:1000,panelY:240,panelH:570},{imageY:0,imageH:480,panelY:470,panelH:480}];const pos=positions[variant];ctx.drawImage(img,0,pos.imageY,600,pos.imageH);ctx.fillStyle=colors[1];ctx.globalAlpha=.94;ctx.fillRect(30,pos.panelY,540,pos.panelH);ctx.globalAlpha=1;let y=text(ctx,'今日签 · '+content.category,60,pos.panelY+55,480,24,colors[2],35);y=text(ctx,content.title,60,y+30,480,42,colors[2],55,2);y=text(ctx,content.mainText,60,y+30,480,36,colors[2],54,4);text(ctx,'把祝福留给今天的自己',60,Math.min(y+35,pos.panelY+pos.panelH-35),480,24,colors[2],34);}
- text(ctx,'人格偏好探索 · 正向日常签',30,980,550,19,colors[2],25);return new Promise((resolve,reject)=>wx.canvasToTempFilePath({canvas:node,fileType:'png',success:r=>resolve(r.tempFilePath),fail:()=>reject(Error('分享图导出失败'))},page));}
-module.exports={render,lines};
+function cover(ctx,img,x,y,w,h){const iw=img.width||720,ih=img.height||1200,scale=Math.max(w/iw,h/ih),sw=w/scale,sh=h/scale;ctx.drawImage(img,(iw-sw)/2,(ih-sh)/2,sw,sh,x,y,w,h);}
+function line(ctx,x,y,w,color){ctx.strokeStyle=color;ctx.lineWidth=1.3;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+w,y);ctx.stroke();}
+function plate(ctx,x,y,w,h,color,alpha=.95){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.fillRect(x,y,w,h);ctx.globalAlpha=1;}
+function shade(ctx,from,to,color,reverse=false){const g=ctx.createLinearGradient(0,from,0,to);g.addColorStop(reverse?1:0,color);g.addColorStop(reverse?0:1,'rgba(250,248,241,0)');ctx.fillStyle=g;ctx.fillRect(0,from,720,to-from);}
+async function prepare(){if(typeof wx!=='undefined'&&wx.loadSubpackage){await new Promise((resolve,reject)=>wx.loadSubpackage({name:'card-art',success:resolve,fail:()=>reject(Error('卡片素材暂未加载，请重试'))}));}if(typeof getApp==='function'){const app=getApp();if(app&&app.globalData.fontReady)await app.globalData.fontReady;}}
+async function render(page,content,id){const theme=themes.find(t=>t.id===id);if(!theme)throw Error('模板不存在');await prepare();const canvas=await new Promise((resolve,reject)=>wx.createSelectorQuery().in(page).select('#poster').fields({node:true,size:true}).exec(r=>r&&r[0]&&r[0].node?resolve(r[0].node):reject(Error('Canvas 尚未就绪'))));canvas.width=720;canvas.height=1200;const ctx=canvas.getContext('2d'),[paper,ink,gold]=palettes[theme.palette],img=await load(canvas,theme.artPath);cover(ctx,img,0,0,720,1200);
+ if(content.kind==='profile'){
+  shade(ctx,0,400,paper);shade(ctx,780,1200,paper,true);ctx.strokeStyle=gold;ctx.lineWidth=1.4;ctx.strokeRect(20,20,680,1160);
+  const v=theme.variant;const top=v===0?64:78;
+  text(ctx,'我的人格偏好',42,top,630,23,ink,32);line(ctx,42,top+17,145,gold);
+  text(ctx,content.type,38,top+127,640,v===0?112:98,ink,126,1,'ExplorerSerif, Georgia, serif');
+  text(ctx,content.title,42,top+184,636,37,ink,50,2);
+  plate(ctx,34,903,652,241,paper,.94);line(ctx,66,929,588,gold);
+  text(ctx,content.shareDescription,66,980,588,34,ink,50,3);
+  text(ctx,content.shareTags.join('　·　'),66,1118,588,24,ink,34,1,'sans-serif');
+  text(ctx,'人格偏好探索 · 仅供自我探索参考',42,1170,636,18,ink,24,1,'sans-serif');
+ }else{
+  const variants=[{y:130,h:480},{y:360,h:500},{y:610,h:470},{y:220,h:500}],pos=variants[theme.variant];
+  ctx.strokeStyle=gold;ctx.lineWidth=1.5;ctx.strokeRect(20,20,680,1160);plate(ctx,55,pos.y,610,pos.h,paper,.94);
+  line(ctx,88,pos.y+78,544,gold);text(ctx,'今日签 · '+content.category,88,pos.y+53,544,22,ink,30,1);
+  let y=text(ctx,content.title,88,pos.y+130,544,29,ink,40,1);
+  y=text(ctx,content.mainText,88,y+48,544,42,ink,62,4);
+  const source=content.source&&content.source.label||'原创日常短句';text(ctx,source,88,Math.min(y+26,pos.y+pos.h-38),544,20,ink,28,2,'sans-serif');
+  text(ctx,'正向日常签 · 一句好话，留给今天',45,1166,630,19,paper,28,1,'sans-serif');
+ }
+ return new Promise((resolve,reject)=>wx.canvasToTempFilePath({canvas,fileType:'png',success:r=>resolve(r.tempFilePath),fail:()=>reject(Error('分享图导出失败'))},page));
+}
+module.exports={render,lines,cover,prepare};

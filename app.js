@@ -1,1 +1,1 @@
-App({globalData:{productName:'人格偏好探索'}});
+App({globalData:{productName:'人格偏好探索',fontReady:Promise.resolve()},onLaunch(){if(!wx.loadFontFace)return;this.globalData.fontReady=new Promise(resolve=>{let done=false;const finish=()=>{if(!done){done=true;resolve()}};wx.loadFontFace({global:true,family:'ExplorerSerif',source:require('./data/font-source'),success:finish,fail:finish});setTimeout(finish,4000)})}});
