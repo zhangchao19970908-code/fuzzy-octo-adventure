@@ -1,0 +1,1 @@
+Page({history(e){wx.navigateTo({url:'/pages/history/index?kind='+e.currentTarget.dataset.kind})},settings(){wx.navigateTo({url:'/pages/settings/index'})}});

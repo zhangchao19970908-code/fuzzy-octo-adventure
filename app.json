@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/test/index",
+    "pages/quiz/index",
+    "pages/result/index",
+    "pages/fortune/index",
+    "pages/fortune-result/index",
+    "pages/share-preview/index",
+    "pages/mine/index",
+    "pages/history/index",
+    "pages/settings/index",
+    "pages/shared/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "遇见更好的自己",
+    "navigationBarBackgroundColor": "#f7fafc",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7fafc"
+  },
+  "tabBar": {
+    "color": "#71849b",
+    "selectedColor": "#163550",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/test/index",
+        "text": "测试",
+        "iconPath": "assets/test.png",
+        "selectedIconPath": "assets/test-active.png"
+      },
+      {
+        "pagePath": "pages/fortune/index",
+        "text": "抽签",
+        "iconPath": "assets/fortune.png",
+        "selectedIconPath": "assets/fortune-active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "assets/mine.png",
+        "selectedIconPath": "assets/mine-active.png"
+      }
+    ]
+  }
+}

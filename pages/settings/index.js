@@ -1,0 +1,1 @@
+const s=require('../../services/storage'),u=require('../../services/ui');Page({clear(){wx.showModal({title:'清除全部本地数据？',content:'测试进度、历史、当天抽签防重和卡片记录都会删除，无法恢复。',confirmText:'确认清除',confirmColor:'#b84946',success:r=>{if(r.confirm)u.safely(()=>{s.clear();wx.showToast({title:'已清除'})})}})}});

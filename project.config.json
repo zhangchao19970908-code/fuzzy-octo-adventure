@@ -1,0 +1,27 @@
+{
+  "description": "原生微信小程序：人格偏好探索与正向抽签",
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "preference-explorer",
+  "setting": {
+    "es6": true,
+    "minified": true
+  },
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "tests"
+      },
+      {
+        "type": "file",
+        "value": "package.json"
+      },
+      {
+        "type": "file",
+        "value": "TEST_REPORT.md"
+      }
+    ]
+  }
+}
